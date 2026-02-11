@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Little Valentine</title>
+
+<style>
+    body {
+  background: #ffeef6;
+  font-family: 'Segoe UI', sans-serif;
+  text-align:center;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+/* Photo container */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  position: relative;
+}
+
+/* Photo frame */
+.photo-frame {
+  position: relative;
+  border: 5px solid gold;
+  border-radius: 15px;
+  padding: 5px;
+  background: #fff0f5;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Image style */
+.photo-frame img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Hover effect */
+.photo-frame:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Teddy bear decoration */
+.teddy {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  font-size: 30px;
+  transition: transform 0.3s;
+}
+
+.photo-frame:hover .teddy {
+  transform: scale(1.2);
+}
+
+/* Heart decoration */
+.heart {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  font-size: 25px;
+  transition: transform 0.3s;
+}
+
+.photo-frame:hover .heart {
+  transform: scale(1.3);
+}
+
+/* ===== Click Me Button ===== */
+.btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  background: #ff6fa5;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Popup ===== */
+.popup {
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s;
+  z-index: 10;
+  max-width: 300px;
+}
+
+.popup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border:none;
+  background: #ff6fa5;
+  color:white;
+  border-radius: 20px;
+  cursor:pointer;
+  transition: transform 0.3s;
+}
+
+.popup button:hover {
+  transform: scale(1.1);
+}
+
+   body {
+  background: #ffeef6;
+  font-family: 'Segoe UI', sans-serif;
+  text-align:center;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+/* Photo container */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  position: relative;
+}
+
+/* Photo frame */
+.photo-frame {
+  position: relative;
+  border: 5px solid gold;
+  border-radius: 15px;
+  padding: 5px;
+  background: #fff0f5;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Image style */
+.photo-frame img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Hover effect */
+.photo-frame:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Teddy bear decoration */
+.teddy {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  font-size: 30px;
+  transition: transform 0.3s;
+}
+
+.photo-frame:hover .teddy {
+  transform: scale(1.2);
+}
+
+/* Heart decoration */
+.heart {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  font-size: 25px;
+  transition: transform 0.3s;
+}
+
+.photo-frame:hover .heart {
+  transform: scale(1.3);
+}
+
+
+/* Hover effect kawaii */
+.heart-photo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(255,105,180,0.6);
+  z-index: 2;
+}
+
+/* ===== Floating Hearts ===== */
+.floating-heart {
+  position: absolute;
+  font-size: 20px;
+  animation: floatHeart 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(20deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+
+/* Hover effect kawaii */
+.heart-photo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(255,105,180,0.6);
+  z-index: 2;
+}
+
+/* ===== Floating Hearts ===== */
+.floating-heart {
+  position: absolute;
+  font-size: 20px;
+  animation: floatHeart 4s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(20deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+  display: block;
+}
+
+.photo-placeholder:hover img {
+  transform: scale(1.05); 
+}
+
+/* ===== RESET ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+overflow-x:hidden;
+background: linear-gradient(135deg,#ffd6e8,#ffeef6,#fff);
+color:#444;
+}
+
+/* ===== HEART FLOAT ANIMATION ===== */
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:20px;
+animation: floatUp 6s linear infinite;
+opacity:0.6;
+pointer-events:none;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0) scale(1);}
+100%{transform:translateY(-110vh) scale(1.5);}
+}
+
+/* ===== INTRO ===== */
+.intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+background: linear-gradient(135deg,#ffc0cb,#ffe6f0);
+position:relative;
+}
+
+.intro h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.intro p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:30px;
+background:#ff6fa5;
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+/* ===== MAIN SECTION ===== */
+.main{
+display:none;
+padding:60px 20px;
+text-align:center;
+}
+
+/* Glass Card */
+.card{
+margin:auto;
+max-width:500px;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,0.25);
+backdrop-filter: blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+position:relative;
+}
+
+/* Teddy Decorations */
+.teddy{
+position:absolute;
+font-size:35px;
+transition:0.3s;
+}
+
+.teddy:hover{
+transform:scale(1.2);
+}
+
+.t1{top:-15px;left:-15px;}
+.t2{bottom:-15px;right:-15px;}
+
+.photo-placeholder{
+border:2px dashed pink;
+padding:40px;
+border-radius:15px;
+margin-bottom:20px;
+color:#ff6fa5;
+}
+
+/* ===== MEMORY SECTION ===== */
+.memory{
+margin-top:40px;
+padding:20px;
+background:linear-gradient(135deg,#ffe0ef,#fff);
+border-radius:15px;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 10px pink;}
+to{box-shadow:0 0 30px hotpink;}
+}
+
+/* ===== POPUP ===== */
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,0,0,0.3);
+transition:0.3s;
+z-index:10;
+max-width:300px;
+text-align:center;
+}
+
+.popup.show{
+transform:translate(-50%,-50%) scale(1);
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+background:white;
+border-radius:50%;
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.music-btn:hover{
+transform:scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+.intro h1{font-size:2rem;}
+.card{padding:20px;}
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+ 
+
+
+<!-- Floating Hearts Container -->
+<div id="hearts"></div>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+<h1>My Little Valentine 💖</h1>
+<p>I made something special just for you ✨</p>
+<button class="btn" onclick="openMain()">Open Your Surprise 🎁</button>
+</section>
+
+<!-- MAIN -->
+<section class="main" id="main">
+
+<div class="card">
+
+<div class="teddy t1">🧸</div>
+<div class="teddy t2">🧸</div>
+
+<div class="photo-container">
+  <div class="photo-frame">
+    <img src="love.jpg.jpg" alt="Love Photo">
+    <div class="teddy">🧸</div>
+    <div class="heart">💖</div>
+  </div>
+
+  <div class="photo-frame">
+    <img src="ryhab1.jpg" alt="Ryhab 1">
+    <div class="teddy">🧸</div>
+    <div class="heart">💖</div>
+  </div>
+
+  <div class="photo-frame">
+    <img src="ryhab2.jpeg" alt="Ryhab 2">
+    <div class="teddy">🧸</div>
+    <div class="heart">💖</div>
+  </div>
+</div>
+
+3aywww ryhaab aaaaahm valentine maghadich n3tabro aid lhub 7it bnisba lia kola nhar kan3icho meak rah aid l hub w mtsnitch had nhar bach n3br lik fih ch7al bghik ana men dima kan7awl nwsl lik ahbiba😭🫶🏻 ahhm maelina i loooove u sooo much💕😭 w kanbghik kanbghik kanbghik kanbghi caractère dylk kanbghi ta3amol dylk lkhaaas meaya😭💕 kay3jboni 7nikatk 3winatk 😭💕(kat3jbini nty kamla saraha🌝🫶) idk hat should I say wlkn kanbghik men qalbiy w bzaaaf bzaf w anbqa nbghik nbghik kifma nty kifma atkouni love u 😭💕
+
+
+
+
+<div class="memory">
+<h3>Our Story Began On 💫</h3>
+<p>04 / 07 / 2025</p>
+</div>
+
+<!-- Click Me Button -->
+<button class="btn" id="clickMe">Click Me 💌</button>
+
+<!-- Popup Message -->
+<div class="popup" id="popup">
+  <p>
+    If I had one wish, it would be to spend more moments with you, laugh with you, and create beautiful memories together 💕
+  </p>
+  <button id="closePopup">Close</button>
+</div>
+
+<!-- MUSIC -->
+<div class="music-btn" onclick="toggleMusic()">🎵</div>
+<audio id="music" src="HIM - Gone With The Sin.mp3"></audio>
+<audio id="cuteSound" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+
+<script>
+
+/* ===== FLOATING HEARTS ===== */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+},500);
+
+
+/* ===== OPEN MAIN ===== */
+function openMain(){
+document.getElementById("intro").style.display="none";
+document.getElementById("main").style.display="block";
+}
+
+/* ===== MUSIC CONTROL WITH FADE ===== */
+let music=document.getElementById("music");
+let playing=false;
+
+function toggleMusic(){
+if(!playing){
+music.volume=0;
+music.play();
+fadeIn();
+playing=true;
+}else{
+fadeOut();
+playing=false;
+}
+}
+
+function fadeIn(){
+let vol=0;
+let interval=setInterval(()=>{
+if(vol<1){
+vol+=0.05;
+music.volume=vol;
+}else clearInterval(interval);
+},100);
+}
+
+function fadeOut(){
+let interval=setInterval(()=>{
+if(music.volume>0){
+music.volume-=0.05;
+}else{
+music.pause();
+clearInterval(interval);
+}
+},100);
+}
+
+// ===== Show popup =====
+const btn = document.getElementById('clickMe');
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('closePopup');
+
+btn.addEventListener('click', () => {
+  popup.classList.add('show');
+});
+
+// ===== Close popup =====
+closeBtn.addEventListener('click', () => {
+  popup.classList.remove('show');
+});
+</script>
+
+</body>
+</html>
+
+
